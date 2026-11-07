@@ -20,7 +20,7 @@ Dopo ogni modifica a CSS/JS aumentare `?v=` nei link di `index.html` (cache).
   20–30 € a persona, accessibilità, 3 recensioni 5★ e frasi in evidenza.
 - **Instagram @viavaitrattoriatorriglia** (account del locale): bio ("piatti del territorio… a seconda delle stagioni
   le proposte variano… una peculiarità è il pesto d'aglio"), locandina **25 anni** (8/12/2025) con le frasi citate,
-  cellulare **351 393 6541** "per info e prenotazioni", indirizzo "Via N.S. della Provvidenza 14–16",
+  cellulare **351 393 6541** "per info e prenotazioni" (attivo su WhatsApp, confermato), indirizzo "Via N.S. della Provvidenza 14–16",
   serate con musica dal vivo / karaoke / DJ set, menu serata (antipasto della casa, ravioli al pesto d'aglio o al ragù, funghi fritti).
 - **Facebook / Tripadvisor / Città Metropolitana**: "pranzo e cena a prezzo fisso o alla carta", "cucina ligure-piacentina, vini e Trebbia beer".
 - **Foto**: `insegna.jpg` e `torriglia-insegna-notte.jpg` da Instagram del locale; le altre da Google Maps (caricate da clienti).
@@ -28,13 +28,11 @@ Dopo ogni modifica a CSS/JS aumentare `?v=` nei link di `index.html` (cache).
 ## Da verificare / completare (segnaposto gialli nel sito, classe `.ph`)
 | Dato | Dove |
 |---|---|
-| **351 393 6541 è attivo su WhatsApp?** | `js/main.js` → `CONFIG.whatsapp` (se no, svuotare: i pulsanti chiameranno il fisso) |
 | `foundingDate: 2000` (dedotto da "25 anni" a dic. 2025) | JSON-LD in `index.html` |
 | **Dominio** definitivo | canonical, og:url, og:image, JSON-LD (`[DOMINIO]`) |
 | Prezzo **menu fisso** pranzo/cena | post-it sulla lavagna + FAQ |
 | **Storia** (chi c'è in cucina e in sala) | sezione storia |
 | Nome del piatto di pesce in foto | galleria piatti |
-| **Parcheggio** | Dove siamo + FAQ |
 | Email `viavai00@gmail.com` (fonte 2021) | footer |
 | **P.IVA**, privacy & cookie policy | footer |
 | **Foto proprie o autorizzate** | sostituire quelle da Google Maps |

@@ -7,7 +7,7 @@
      ------------------------------------------------------------------ */
   var CONFIG = {
     // Cellulare indicato dal locale "per info e prenotazioni" sulle locandine Instagram (351 393 6541).
-    // DA VERIFICARE che sia attivo su WhatsApp. Se si lascia vuoto, i pulsanti WhatsApp avviano una chiamata.
+    // Attivo su WhatsApp (confermato dal cliente). Se si svuota, i pulsanti WhatsApp avviano una chiamata.
     whatsapp: '393513936541',
     phone: '+390109451005',
     timeZone: 'Europe/Rome',
@@ -309,7 +309,6 @@
       a.href = 'tel:' + CONFIG.phone;
     }
   });
-  if (!waReady) { var note = $('#wa-placeholder-note'); if (note) note.hidden = false; }
 
   /* ------------------------------------------------------------------
      Modulo di prenotazione
