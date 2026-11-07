@@ -23,7 +23,11 @@ Dopo ogni modifica a CSS/JS aumentare `?v=` nei link di `index.html` (cache).
   cellulare **351 393 6541** "per info e prenotazioni" (attivo su WhatsApp, confermato), indirizzo "Via N.S. della Provvidenza 14–16",
   serate con musica dal vivo / karaoke / DJ set, menu serata (antipasto della casa, ravioli al pesto d'aglio o al ragù, funghi fritti).
 - **Facebook / Tripadvisor / Città Metropolitana**: "pranzo e cena a prezzo fisso o alla carta", "cucina ligure-piacentina, vini e Trebbia beer".
-- **Foto**: `insegna.jpg` e `torriglia-insegna-notte.jpg` da Instagram del locale; le altre da Google Maps (caricate da clienti).
+- **Facebook TrattoriaViavaiTorriglia** (pagina del locale): "La nostra Tagliata ai funghi porcini" (19/10/2026), "proposte a base di funghi della nostra zona" (3/10/2026),
+  "Come ogni Venerdì torna in Trattoria lo Stoccafisso in bianco o accomodato. (Anche per asporto)" (22/10/2026).
+- **Foto**: hero e galleria → `tagliata-porcini`, `porcini`, `ravioli`, `stoccafisso` dalla pagina Facebook del locale
+  (attenzione: Facebook etichetta i post della tagliata e dei porcini come "Contenuti IA", cioè immagini generate o ritoccate con IA);
+  `insegna.jpg` e `torriglia-insegna-notte.jpg` da Instagram del locale; tagliolini, secondi, sala, facciata e vini da Google Maps (caricate da clienti).
 
 ## Da verificare / completare (segnaposto gialli nel sito, classe `.ph`)
 | Dato | Dove |
@@ -32,10 +36,9 @@ Dopo ogni modifica a CSS/JS aumentare `?v=` nei link di `index.html` (cache).
 | **Dominio** definitivo | canonical, og:url, og:image, JSON-LD (`[DOMINIO]`) |
 | Prezzo **menu fisso** pranzo/cena | post-it sulla lavagna + FAQ |
 | **Storia** (chi c'è in cucina e in sala) | sezione storia |
-| Nome del piatto di pesce in foto | galleria piatti |
 | Email `viavai00@gmail.com` (fonte 2021) | footer |
 | **P.IVA**, privacy & cookie policy | footer |
-| **Foto proprie o autorizzate** | sostituire quelle da Google Maps |
+| **Foto proprie o autorizzate** | sostituire quelle da Google Maps; chiedere conferma per usare quelle dei social del locale |
 | GA4 / Google Tag Manager | `<head>` — eventi già inviati a `dataLayer` (`book_*`, `call_*`, `directions_*`, `whatsapp_click`, `booking_request`, `ig_*`) |
 
 Da aggiornare periodicamente: voto e numero recensioni (hero + Recensioni), orari se stagionali (`CONFIG.hours` + tabella + JSON-LD).

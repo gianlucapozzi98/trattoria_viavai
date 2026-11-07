@@ -97,12 +97,30 @@
       var img = $('img', s);
       if (img && img.dataset.src) { img.srcset = img.dataset.srcset || ''; img.src = img.dataset.src; delete img.dataset.src; }
     }
+    var tag = $('.hero__tag');
+    var tagN = tag && $('.hero__tag-n', tag);
+    var tagText = tag && $('.hero__tag-text', tag);
+    var pad = function (v) { return (v < 10 ? '0' : '') + v; };
     function go(n) {
-      slides[cur].classList.remove('is-active'); dots[cur] && dots[cur].classList.remove('is-active');
-      cur = (n + slides.length) % slides.length;
+      n = (n + slides.length) % slides.length;
+      if (n === cur) return;
+      // il piatto precedente resta sotto, il nuovo "si apre" sopra
+      slides.forEach(function (s) { s.classList.remove('is-prev'); });
+      slides[cur].classList.remove('is-active');
+      slides[cur].classList.add('is-prev');
+      dots[cur] && dots[cur].classList.remove('is-active');
+      cur = n;
       hydrate(slides[cur]); hydrate(slides[(cur + 1) % slides.length]);
+      void slides[cur].offsetWidth;
       slides[cur].classList.add('is-active');
       if (dots[cur]) { dots[cur].classList.remove('is-active'); void dots[cur].offsetWidth; dots[cur].classList.add('is-active'); }
+      if (tag) {
+        tag.classList.remove('is-swapping'); void tag.offsetWidth; tag.classList.add('is-swapping');
+        setTimeout(function () {
+          tagText.textContent = slides[cur].dataset.label || '';
+          tagN.innerHTML = pad(cur + 1) + '<i>/' + pad(slides.length) + '</i>';
+        }, 360);
+      }
     }
     function start() { clearInterval(timer); if (!reduceMotion) timer = setInterval(function () { go(cur + 1); }, 6000); }
     window.addEventListener('load', function () { hydrate(slides[1]); start(); });

@@ -20,15 +20,15 @@
   <meta property="og:locale" content="it_IT">
   <meta property="og:title" content="Trattoria ViaVai · Cucina tipica ligure a Torriglia">
   <meta property="og:description" content="Da oltre 25 anni a Torriglia: pesto d'aglio, ravioli, funghi. Pranzo e cena a prezzo fisso o alla carta. Chiuso il mercoledì.">
-  <meta property="og:image" content="https://[DOMINIO]/img/facciata-1400.jpg">
+  <meta property="og:image" content="https://[DOMINIO]/img/tagliata-porcini-1400.jpg">
   <meta property="og:url" content="https://[DOMINIO]/">
 
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,400..700,100,1;1,9..144,400..700,100,1&display=swap" rel="stylesheet">
-  <link rel="preload" as="image" href="img/tagliolini-funghi-700.jpg" imagesrcset="img/tagliolini-funghi-700.jpg 525w, img/tagliolini-funghi-1200.jpg 900w" imagesizes="100vw" fetchpriority="high">
-  <link rel="stylesheet" href="css/style.css?v=2">
+  <link rel="preload" as="image" href="img/tagliata-porcini-800.jpg" imagesrcset="img/tagliata-porcini-800.jpg 600w, img/tagliata-porcini-1400.jpg 1050w" imagesizes="100vw" fetchpriority="high">
+  <link rel="stylesheet" href="css/style.css?v=4">
 
   <script type="application/ld+json">
   {
@@ -40,6 +40,7 @@
     "description": "Trattoria tipica dell'entroterra ligure a Torriglia: cucina ligure-piacentina, pesto d'aglio, pranzo e cena a prezzo fisso o alla carta.",
     "url": "https://[DOMINIO]/",
     "image": [
+      "https://[DOMINIO]/img/tagliata-porcini-1400.jpg",
       "https://[DOMINIO]/img/facciata-1400.jpg",
       "https://[DOMINIO]/img/sala-bancone-1400.jpg",
       "https://[DOMINIO]/img/tagliolini-funghi-1200.jpg"
@@ -133,25 +134,30 @@
   <!-- ============ 1. HERO ============ -->
   <section class="hero" aria-labelledby="hero-title">
     <div class="hero__slides" aria-hidden="true">
-      <figure class="slide is-active">
-        <img src="img/tagliolini-funghi-700.jpg" srcset="img/tagliolini-funghi-700.jpg 525w, img/tagliolini-funghi-1200.jpg 900w" sizes="100vw" alt="" fetchpriority="high">
+      <figure class="slide is-active" data-label="Tagliata ai funghi porcini">
+        <img src="img/tagliata-porcini-800.jpg" srcset="img/tagliata-porcini-800.jpg 600w, img/tagliata-porcini-1400.jpg 1050w" sizes="100vw" alt="" fetchpriority="high">
       </figure>
-      <figure class="slide">
-        <img data-src="img/sala-bancone-800.jpg" data-srcset="img/sala-bancone-800.jpg 800w, img/sala-bancone-1400.jpg 1400w" sizes="100vw" alt="">
+      <figure class="slide" data-label="Funghi porcini della nostra zona">
+        <img data-src="img/porcini-900.jpg" data-srcset="img/porcini-900.jpg 900w, img/porcini-1800.jpg 1800w" sizes="100vw" alt="">
       </figure>
-      <figure class="slide">
-        <img data-src="img/tagliata-600.jpg" data-srcset="img/tagliata-600.jpg 599w, img/tagliata-1000.jpg 999w" sizes="100vw" alt="">
+      <figure class="slide" data-label="I nostri ravioli">
+        <img data-src="img/ravioli-800.jpg" data-srcset="img/ravioli-800.jpg 797w, img/ravioli-1400.jpg 1395w" sizes="100vw" alt="">
       </figure>
-      <figure class="slide">
-        <img data-src="img/facciata-800.jpg" data-srcset="img/facciata-800.jpg 800w, img/facciata-1400.jpg 1400w" sizes="100vw" alt="">
+      <figure class="slide" data-label="Il venerdì: stoccafisso in bianco">
+        <img data-src="img/stoccafisso-700.jpg" data-srcset="img/stoccafisso-700.jpg 700w, img/stoccafisso-1080.jpg 1080w" sizes="100vw" alt="">
       </figure>
     </div>
     <div class="hero__shade"></div>
 
+    <p class="hero__tag" aria-hidden="true">
+      <span class="hero__tag-n">01<i>/04</i></span>
+      <span class="hero__tag-text">Tagliata ai funghi porcini</span>
+    </p>
+
     <div class="hero__content">
       <p class="script hero__hello">Benvenuti a tavola!</p>
       <h1 id="hero-title" class="hero__title" data-split>Trattoria tipica ligure a <em>Torriglia</em></h1>
-      <p class="hero__sub">Da oltre 25 anni cucina casalinga dell'entroterra: pesto d'aglio, ravioli, funghi. Pranzo e cena a prezzo fisso o alla carta, 20–30&nbsp;€ a persona.</p>
+      <p class="hero__sub">Da oltre 25 anni cucina casalinga dell'entroterra: funghi della nostra zona, ravioli, pesto d'aglio. Pranzo e cena a prezzo fisso o alla carta, 20–30&nbsp;€ a persona.</p>
 
       <ul class="chips">
         <li>
@@ -177,19 +183,19 @@
       <p class="hero__address"><svg aria-hidden="true"><use href="#i-pin"/></svg>Via Provvidenza 14, Torriglia (GE) · Chiuso il mercoledì</p>
     </div>
 
-    <div class="hero__dots" role="tablist" aria-label="Foto">
-      <button type="button" class="is-active" aria-label="Foto 1"></button>
-      <button type="button" aria-label="Foto 2"></button>
-      <button type="button" aria-label="Foto 3"></button>
-      <button type="button" aria-label="Foto 4"></button>
+    <div class="hero__dots" aria-label="Piatti in foto">
+      <button type="button" class="is-active" aria-label="Tagliata ai funghi porcini"></button>
+      <button type="button" aria-label="Funghi porcini"></button>
+      <button type="button" aria-label="Ravioli"></button>
+      <button type="button" aria-label="Stoccafisso in bianco"></button>
     </div>
   </section>
 
   <!-- ============ 2. NASTRO ANIMATO ============ -->
   <div class="ribbon" aria-hidden="true">
     <div class="ribbon__track">
-      <span>Pesto d'aglio</span><i>✦</i><span>Ravioli al ragù</span><i>✦</i><span>Funghi fritti</span><i>✦</i><span>Tagliolini ai funghi</span><i>✦</i><span>Antipasto della casa</span><i>✦</i><span>Torta di mele calda</span><i>✦</i><span>Vino della casa</span><i>✦</i><span>Trebbia beer</span><i>✦</i>
-      <span>Pesto d'aglio</span><i>✦</i><span>Ravioli al ragù</span><i>✦</i><span>Funghi fritti</span><i>✦</i><span>Tagliolini ai funghi</span><i>✦</i><span>Antipasto della casa</span><i>✦</i><span>Torta di mele calda</span><i>✦</i><span>Vino della casa</span><i>✦</i><span>Trebbia beer</span><i>✦</i>
+      <span>Pesto d'aglio</span><i>✦</i><span>Tagliata ai porcini</span><i>✦</i><span>Ravioli al ragù</span><i>✦</i><span>Stoccafisso del venerdì</span><i>✦</i><span>Funghi fritti</span><i>✦</i><span>Tagliolini ai funghi</span><i>✦</i><span>Antipasto della casa</span><i>✦</i><span>Torta di mele calda</span><i>✦</i><span>Vino della casa</span><i>✦</i><span>Trebbia beer</span><i>✦</i>
+      <span>Pesto d'aglio</span><i>✦</i><span>Tagliata ai porcini</span><i>✦</i><span>Ravioli al ragù</span><i>✦</i><span>Stoccafisso del venerdì</span><i>✦</i><span>Funghi fritti</span><i>✦</i><span>Tagliolini ai funghi</span><i>✦</i><span>Antipasto della casa</span><i>✦</i><span>Torta di mele calda</span><i>✦</i><span>Vino della casa</span><i>✦</i><span>Trebbia beer</span><i>✦</i>
     </div>
   </div>
 
@@ -266,11 +272,12 @@
             <li class="chalk-line star" style="--d:1"><span>Ravioli al pesto d'aglio o al ragù</span><small>la specialità della casa</small></li>
             <li class="chalk-line" style="--d:2"><span>Tagliolini freschi al sugo di funghi</span></li>
             <li class="chalk-line" style="--d:3"><span>Funghi fritti</span></li>
-            <li class="chalk-line" style="--d:4"><span>Tagliata con verdure</span></li>
-            <li class="chalk-line" style="--d:5"><span>Torta di mele calda</span></li>
-            <li class="chalk-line" style="--d:6"><span>Vino della casa · Trebbia beer</span></li>
+            <li class="chalk-line" style="--d:4"><span>Tagliata ai funghi porcini</span><small>con i funghi della nostra zona, in stagione</small></li>
+            <li class="chalk-line star" style="--d:5"><span>Stoccafisso in bianco o accomodato</span><small>ogni venerdì, anche da asporto</small></li>
+            <li class="chalk-line" style="--d:6"><span>Torta di mele calda</span></li>
+            <li class="chalk-line" style="--d:7"><span>Vino della casa · Trebbia beer</span></li>
           </ul>
-          <p class="board__note chalk">piatti citati dai clienti nelle recensioni</p>
+          <p class="board__note chalk">dalle recensioni e dalle nostre pagine social</p>
         </div>
         <div class="postit" data-reveal="drop" style="--d:3">
           <strong>Prezzi</strong>
@@ -285,12 +292,13 @@
     <div class="hscroll" id="hscroll">
       <div class="hscroll__sticky">
         <div class="hscroll__track">
-          <figure class="dish"><div class="dish__img"><img src="img/tagliolini-funghi-700.jpg" width="525" height="700" loading="lazy" alt="Tagliolini freschi al sugo di funghi"></div><figcaption><span class="dish__n">01</span><strong>Tagliolini ai funghi</strong></figcaption></figure>
-          <figure class="dish"><div class="dish__img"><img src="img/tagliata-600.jpg" width="599" height="600" loading="lazy" alt="Tagliata con scaglie di formaggio e insalata"></div><figcaption><span class="dish__n">02</span><strong>Tagliata</strong></figcaption></figure>
-          <figure class="dish"><div class="dish__img"><img src="img/secondo-verdure-600.jpg" width="450" height="600" loading="lazy" alt="Secondo di carne con verdure grigliate"></div><figcaption><span class="dish__n">03</span><strong>Carne e verdure grigliate</strong></figcaption></figure>
-          <figure class="dish"><div class="dish__img"><img src="img/carne-griglia-600.jpg" width="337" height="600" loading="lazy" alt="Carne alla griglia con patate al forno"></div><figcaption><span class="dish__n">04</span><strong>Alla griglia, con patate</strong></figcaption></figure>
-          <figure class="dish"><div class="dish__img"><img src="img/pesce-patate-600.jpg" width="450" height="600" loading="lazy" alt="Piatto di pesce con patate e prezzemolo"></div><figcaption><span class="dish__n">05</span><strong>Pesce con patate</strong> <span class="ph">nome da verificare</span></figcaption></figure>
-          <figure class="dish"><div class="dish__img"><img src="img/vini-viavai-960.jpg" width="960" height="720" loading="lazy" alt="Bottiglie di vino con etichetta Trattoria ViaVai"></div><figcaption><span class="dish__n">06</span><strong>I vini con la nostra etichetta</strong></figcaption></figure>
+          <figure class="dish"><div class="dish__img"><img src="img/tagliata-porcini-800.jpg" width="600" height="800" loading="lazy" alt="Tagliata ai funghi porcini con patate al forno, Trattoria ViaVai Torriglia"></div><figcaption><span class="dish__n">01</span><strong>Tagliata ai funghi porcini</strong></figcaption></figure>
+          <figure class="dish"><div class="dish__img"><img src="img/ravioli-800.jpg" width="797" height="800" loading="lazy" alt="Ravioli della Trattoria ViaVai"></div><figcaption><span class="dish__n">02</span><strong>I nostri ravioli</strong></figcaption></figure>
+          <figure class="dish"><div class="dish__img"><img src="img/porcini-900.jpg" width="900" height="506" loading="lazy" alt="Funghi porcini freschi della zona di Torriglia"></div><figcaption><span class="dish__n">03</span><strong>Porcini della nostra zona</strong></figcaption></figure>
+          <figure class="dish"><div class="dish__img"><img src="img/stoccafisso-700.jpg" width="700" height="447" loading="lazy" alt="Stoccafisso in bianco con patate e prezzemolo"></div><figcaption><span class="dish__n">04</span><strong>Stoccafisso in bianco, il venerdì</strong></figcaption></figure>
+          <figure class="dish"><div class="dish__img"><img src="img/tagliolini-funghi-700.jpg" width="525" height="700" loading="lazy" alt="Tagliolini freschi al sugo di funghi"></div><figcaption><span class="dish__n">05</span><strong>Tagliolini ai funghi</strong></figcaption></figure>
+          <figure class="dish"><div class="dish__img"><img src="img/secondo-verdure-600.jpg" width="450" height="600" loading="lazy" alt="Secondo di carne con verdure grigliate"></div><figcaption><span class="dish__n">06</span><strong>Carne e verdure grigliate</strong></figcaption></figure>
+          <figure class="dish"><div class="dish__img"><img src="img/vini-viavai-960.jpg" width="960" height="720" loading="lazy" alt="Bottiglie di vino con etichetta Trattoria ViaVai"></div><figcaption><span class="dish__n">07</span><strong>I vini con la nostra etichetta</strong></figcaption></figure>
           <a class="dish dish--cta" href="#prenota" data-track="book_gallery"><span class="script">Ti è venuta fame?</span><strong>Prenota un tavolo</strong><svg><use href="#i-arrow"/></svg></a>
         </div>
       </div>
@@ -516,11 +524,11 @@
       </div>
       <div class="ig-grid">
         <a href="https://www.instagram.com/viavaitrattoriatorriglia/" target="_blank" rel="noopener" data-reveal="zoom" style="--d:0"><img src="img/insegna.jpg" loading="lazy" alt="Insegna della trattoria"></a>
-        <a href="https://www.instagram.com/viavaitrattoriatorriglia/" target="_blank" rel="noopener" data-reveal="zoom" style="--d:1"><img src="img/tagliolini-funghi-700.jpg" loading="lazy" alt="Tagliolini ai funghi"></a>
+        <a href="https://www.instagram.com/viavaitrattoriatorriglia/" target="_blank" rel="noopener" data-reveal="zoom" style="--d:1"><img src="img/tagliata-porcini-800.jpg" loading="lazy" alt="Tagliata ai funghi porcini"></a>
         <a href="https://www.instagram.com/viavaitrattoriatorriglia/" target="_blank" rel="noopener" data-reveal="zoom" style="--d:2"><img src="img/torriglia-insegna-notte.jpg" loading="lazy" alt="Torriglia di sera"></a>
-        <a href="https://www.instagram.com/viavaitrattoriatorriglia/" target="_blank" rel="noopener" data-reveal="zoom" style="--d:3"><img src="img/tagliata-600.jpg" loading="lazy" alt="Tagliata"></a>
+        <a href="https://www.instagram.com/viavaitrattoriatorriglia/" target="_blank" rel="noopener" data-reveal="zoom" style="--d:3"><img src="img/ravioli-800.jpg" loading="lazy" alt="Ravioli"></a>
         <a href="https://www.instagram.com/viavaitrattoriatorriglia/" target="_blank" rel="noopener" data-reveal="zoom" style="--d:4"><img src="img/vini-viavai-960.jpg" loading="lazy" alt="I vini della casa"></a>
-        <a href="https://www.instagram.com/viavaitrattoriatorriglia/" target="_blank" rel="noopener" data-reveal="zoom" style="--d:5"><img src="img/sala-bancone-800.jpg" loading="lazy" alt="La sala"></a>
+        <a href="https://www.instagram.com/viavaitrattoriatorriglia/" target="_blank" rel="noopener" data-reveal="zoom" style="--d:5"><img src="img/porcini-900.jpg" loading="lazy" alt="Funghi porcini freschi"></a>
       </div>
     </div>
   </section>
@@ -588,7 +596,7 @@
     </div>
     <p class="legal">
       © <span id="year">2026</span> Trattoria ViaVai · P.IVA <span class="ph">DA INSERIRE</span> · <span class="ph">Privacy &amp; cookie policy: DA INSERIRE</span><br>
-      <span class="ph">FOTO dei piatti e della sala da Google Maps (caricate da clienti): sostituire con foto proprie o autorizzate</span>
+      <span class="ph">FOTO tagliolini, secondi, sala, facciata e vini da Google Maps (caricate da clienti): sostituire con foto proprie o autorizzate</span>
     </p>
   </div>
 </footer>
@@ -599,6 +607,6 @@
   <a class="is-primary" href="#prenota" data-track="book_bar"><svg aria-hidden="true"><use href="#i-cal"/></svg>Prenota un tavolo</a>
 </nav>
 
-<script src="js/main.js?v=3" defer></script>
+<script src="js/main.js?v=4" defer></script>
 </body>
 </html>
