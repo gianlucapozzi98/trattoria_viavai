@@ -30,7 +30,8 @@
   var DAYS = ['domenica', 'lunedì', 'martedì', 'mercoledì', 'giovedì', 'venerdì', 'sabato'];
   var waReady = /^\d{10,15}$/.test(CONFIG.whatsapp);
   var root = document.documentElement;
-  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  // Le animazioni restano attive anche con "Riduci movimento" attivo sul telefono (richiesta del cliente).
+  var reduceMotion = false;
   var $ = function (s, c) { return (c || document).querySelector(s); };
   var $$ = function (s, c) { return Array.prototype.slice.call((c || document).querySelectorAll(s)); };
 
@@ -86,46 +87,48 @@
   });
 
   /* ------------------------------------------------------------------
-     Slideshow hero (Ken Burns)
+     Hero: i piatti arrivano sul tavolo come foto, uno sopra l'altro
      ------------------------------------------------------------------ */
   (function () {
-    var slides = $$('.hero .slide');
-    var dots = $$('.hero__dots button');
-    if (slides.length < 2) return;
-    var cur = 0, timer;
-    function hydrate(s) {
-      var img = $('img', s);
-      if (img && img.dataset.src) { img.srcset = img.dataset.srcset || ''; img.src = img.dataset.src; delete img.dataset.src; }
+    var cards = $$('.hero__deck .card');
+    if (!cards.length) return;
+    var z = 10, pile = [];
+    function rnd(a, b) { return a + Math.random() * (b - a); }
+    function deal(card) {
+      card.classList.remove('is-lifted');
+      card.style.zIndex = ++z;
+      card.style.setProperty('--r', rnd(-9, 9).toFixed(1) + 'deg');
+      card.style.setProperty('--x', rnd(-16, 16).toFixed(0) + 'px');
+      card.style.setProperty('--y', rnd(-8, 10).toFixed(0) + 'px');
+      void card.offsetWidth;
+      card.classList.add('is-dealt');
+      pile.push(card);
     }
-    var tag = $('.hero__tag');
-    var tagN = tag && $('.hero__tag-n', tag);
-    var tagText = tag && $('.hero__tag-text', tag);
-    var pad = function (v) { return (v < 10 ? '0' : '') + v; };
-    function go(n) {
-      n = (n + slides.length) % slides.length;
-      if (n === cur) return;
-      // il piatto precedente resta sotto, il nuovo "si apre" sopra
-      slides.forEach(function (s) { s.classList.remove('is-prev'); });
-      slides[cur].classList.remove('is-active');
-      slides[cur].classList.add('is-prev');
-      dots[cur] && dots[cur].classList.remove('is-active');
-      cur = n;
-      hydrate(slides[cur]); hydrate(slides[(cur + 1) % slides.length]);
-      void slides[cur].offsetWidth;
-      slides[cur].classList.add('is-active');
-      if (dots[cur]) { dots[cur].classList.remove('is-active'); void dots[cur].offsetWidth; dots[cur].classList.add('is-active'); }
-      if (tag) {
-        tag.classList.remove('is-swapping'); void tag.offsetWidth; tag.classList.add('is-swapping');
-        setTimeout(function () {
-          tagText.textContent = slides[cur].dataset.label || '';
-          tagN.innerHTML = pad(cur + 1) + '<i>/' + pad(slides.length) + '</i>';
-        }, 360);
-      }
+    function cycle() {
+      var bottom = pile.shift();
+      if (!bottom) return;
+      bottom.style.zIndex = ++z;           // la prendo da sotto e la sollevo sopra le altre
+      bottom.classList.add('is-lifted');
+      bottom.classList.remove('is-dealt'); // vola via...
+      setTimeout(function () { deal(bottom); }, 620); // ...e torna in cima al mucchio
     }
-    function start() { clearInterval(timer); if (!reduceMotion) timer = setInterval(function () { go(cur + 1); }, 6000); }
-    window.addEventListener('load', function () { hydrate(slides[1]); start(); });
-    dots.forEach(function (d, i) { d.addEventListener('click', function () { go(i); start(); }); });
+    // prima mano: dall'ultima alla prima, cosi' in cima resta la tagliata
+    var order = cards.slice().reverse();
+    order.forEach(function (c, k) { setTimeout(function () { deal(c); }, 500 + k * 380); });
+    var timer;
+    function start() { clearInterval(timer); timer = setInterval(cycle, 3400); }
+    setTimeout(start, 500 + order.length * 380 + 1600);
     document.addEventListener('visibilitychange', function () { if (document.hidden) clearInterval(timer); else start(); });
+  })();
+
+  /* L'insegna dondola quando la tocchi */
+  (function () {
+    var sign = $('.hero .sign');
+    if (!sign) return;
+    sign.addEventListener('click', function () {
+      sign.classList.remove('is-nudged'); void sign.offsetWidth; sign.classList.add('is-nudged');
+      track('sign_tap');
+    });
   })();
 
   /* ------------------------------------------------------------------

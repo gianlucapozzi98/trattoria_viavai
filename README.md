@@ -6,13 +6,20 @@ Anteprima locale: `python3 -m http.server 8765` nella cartella, poi http://local
 Ispirazione: burlagiomilano.it (atmosfera calda, sovratitoli calligrafici), lespecialitamilano.com
 (sfondo senape, logo ovale, impaginazione editoriale), denispizza.it (slideshow, parallasse, animazioni allo scroll).
 
+## Logo
+`img/logo-viavai.svg` (vettoriale) e `img/logo-viavai.png`: ricreato dall'insegna ovale in ferro. Script per rigenerarlo in `tools/logo/`.
+
+## Pagina iniziale
+L'insegna appesa al braccio in ferro scende dondolando (toccandola dondola di nuovo); i piatti arrivano sul tavolo come polaroid,
+uno sopra l'altro; timbro rotante "25 anni a tavola".
+
 ## Animazioni (JS vanilla, nessuna libreria)
 Sipario d'apertura con logo ovale (solo alla prima visita della sessione) · slideshow hero con zoom lento ·
 titolo che entra parola per parola · nastro di piatti in movimento · polaroid in parallasse ·
 sottolineatura disegnata a mano · contatore "25 anni" e voto Google · lavagna scritta "col gessetto" ·
 galleria piatti a scorrimento orizzontale agganciato (desktop) · tovaglia a quadretti · recensioni come
 biglietti appuntati · lucine che brillano nella sezione serate · menu mobile a comparsa circolare.
-Tutto si disattiva con l'impostazione di sistema "riduci movimento".
+Le animazioni restano attive anche con "Riduci movimento" attivo sul telefono (richiesta del cliente).
 Dopo ogni modifica a CSS/JS aumentare `?v=` nei link di `index.html` (cache).
 
 ## Fonti dei dati (rilevati il 07/11/2026)
